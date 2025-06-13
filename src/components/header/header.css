@@ -1,0 +1,26 @@
+.NavBarLink {
+    font-family: 'Inter';
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    color: #000;
+}
+
+.Phone-Number{
+        font-family: 'Oswald';
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+
+
+.cellPhone:hover .Phone-Number{
+    color: oklch(0.424 0.199 265.638);
+    transition: all 0.3s ease;
+}
+.cellPhone:active .Phone-Number{
+    color: #fff;
+}
