@@ -61,9 +61,9 @@ const Plans = () => {
           {pricingData.map((plan, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition"
-              data-aos="fade-up"
-              data-aos-delay={index * 300}
+              className="bg-white rounded-xl  flex flex-col justify-between shadow-md p-6 hover:shadow-xl transition"
+              // data-aos="fade-up"
+              // data-aos-delay={index * 300}
             >
               <h3 className="text-xl font-semibold text-blue-600 mb-2">
                 {plan.title}

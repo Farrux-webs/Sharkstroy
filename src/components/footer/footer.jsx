@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../assets/icons/logo.png";
+import Logo from "../../assets/icons/LogoShark.png";
 import { FaInstagram } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {/* Kompaniya */}
         <div>
-          <img src={Logo} alt="" className="w-32 h-auto mb-3" />
+          <img src={Logo} alt="" className="w-32 h-auto mb-10" />
           <p className="text-sm text-gray-300">
             Sharkstroy — 10 yillik tajribaga ega qurilish kompaniyasi. Biz
             sifatli, zamonaviy va ishonchli qurilish xizmatlarini taklif

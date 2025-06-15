@@ -5,7 +5,7 @@ import TopBackground from "../../assets/images/TopBackground.jpg";
 const AboutUs = () => {
   return (
     <>
-      <section className="bg-transparent py-30 ">
+      <section className="bg-transparent py-25 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-10">
           {/* Chap tomonda rasm */}
           <div
