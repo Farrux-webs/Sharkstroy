@@ -24,15 +24,17 @@ function Routes() {
   return (
     <>
       <LanguageProvider>
-        <Header />
-        <main>
-          <AboutUs />
-          <Guarantees />
-          <Gallery />
-          <Plans />
-          <ContactUs />
-        </main>
-        <Footer />
+        <body className="scroll-smooth">
+          <Header />
+          <main>
+            <AboutUs />
+            <Guarantees />
+            <Gallery />
+            <Plans />
+            <ContactUs />
+          </main>
+          <Footer />
+        </body>
       </LanguageProvider>
     </>
   );

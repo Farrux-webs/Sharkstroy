@@ -64,7 +64,7 @@ const Header = () => {
             <button className="order-2 cellPhone lg:flex items-center gap-2 px-4 py-2 bg-blue-800 text-white hover:ring-2 hover:ring-blue-800 hover:bg-white hover:text-blue-800 transition-all duration-300 cursor-pointer active:bg-blue-800 active:text-white">
               <FontAwesomeIcon icon={faPhone} />
               <NavLink to="#" className="Phone-Number">
-                +998(99)1133000
+                +998 (99) 113-30-00
               </NavLink>
             </button>
           </div>

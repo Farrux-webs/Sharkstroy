@@ -1,5 +1,5 @@
 import React from "react";
-import aboutusphoto from "../../assets/images/about-us.jpg";
+import aboutusphoto from "../../assets/images/aboutus.webp";
 import TopBackground from "../../assets/images/TopBackground.jpg";
 
 const AboutUs = () => {
