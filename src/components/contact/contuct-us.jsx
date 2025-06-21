@@ -1,27 +1,61 @@
 import React, { useState } from 'react';
 
 const ContactUs = () => {
-  const [formData, setFormData] = useState({
-    fullname: '',
-    phone: '',
-    address: '',
-    message: ''
-  });
 
-  const handleChange = (e) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
 
-  const handleSubmit = (e) => {
+
+
+
+const [formData, setFormData] = useState({
+  fullname: "",
+  phone: "",
+  address: "",
+  message: ""
+});
+
+const handleChange = (e) => {
+  setFormData((prev) => ({
+    ...prev,
+    [e.target.name]: e.target.value
+  }));
+};
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Yuborilgan maʼlumot:', formData);
-    alert("Murojaatingiz yuborildi!");
-    // Bu yerda serverga yuborish kiritilishi mumkin
-    setFormData({ fullname: '', phone: '', address: '', message: '' });
+
+    try {
+      const res = await fetch("http://localhost:5000/api/send-form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: formData.fullname,
+          phone: formData.phone,
+          address: formData.address,
+          purpose: formData.message
+        })
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("Zayavka yuborildi!");
+        setFormData({
+          fullname: "",
+          phone: "",
+          address: "",
+          message: ""
+        });
+      } else {
+        alert("Xatolik: " + data.message);
+      }
+    } catch (err) {
+      console.error("Serverga ulanib bo‘lmadi:", err);
+      alert("Serverga ulanib bo‘lmadi. Iltimos, keyinroq urinib ko‘ring.");
+    }
   };
+
+
 
   return (
     <section className="bg-white py-16 px-4">
@@ -96,3 +130,5 @@ const ContactUs = () => {
 };
 
 export default ContactUs;
+
+

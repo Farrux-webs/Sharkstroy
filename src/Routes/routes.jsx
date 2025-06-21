@@ -23,8 +23,7 @@ function Routes() {
 
   return (
     <>
-      <LanguageProvider>
-        <body className="scroll-smooth">
+        <LanguageProvider>
           <Header />
           <main>
             <AboutUs />
@@ -34,8 +33,7 @@ function Routes() {
             <ContactUs />
           </main>
           <Footer />
-        </body>
-      </LanguageProvider>
+        </LanguageProvider>
     </>
   );
 }
