@@ -19,41 +19,44 @@ const Header = () => {
   const t = texts[language];
 
   return (
-    <header className="fixed bg-white top-0 left-0 w-full bg-transparent z-50 py-4 ">
+    <header className="fixed top-0 left-0 w-full bg-transparent z-50 py-4 ">
       <div className=" xl:container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
+          <NavLink>
           <img
             src={Logo}
-            width="50"
-            height="50"
+            width="70"
+            height="70"
             alt=""
-            className="w-32 h-auto LOGO order-2 lg:order-1"
+            className="w-32 h-auto LOGO order-2 lg:order-1 cursor-pointer"
           />
+
+          </NavLink>
 
           {/* Desktop Menu */}
           <nav className="w-[400px] hidden lg:order-2 lg:flex justify-between space-x-6">
             <NavLink
               to="#"
-              className="relative m-0 inline-block text-black NavBarLink after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[3px] after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full"
+              className="relative m-0 inline-block text-white NavBarLink after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[3px] after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full"
             >
               {t.about}
             </NavLink>
             <NavLink
               to="#"
-              className="relative m-0 inline-block text-black NavBarLink after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[3px] after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full"
+              className="relative m-0 inline-block text-white NavBarLink after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[3px] after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full"
             >
               {t.services}
             </NavLink>
             <NavLink
               to="#"
-              className="relative m-0 inline-block text-black NavBarLink after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[3px] after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full"
+              className="relative m-0 inline-block text-white NavBarLink after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[3px] after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full"
             >
               {t.contact}
             </NavLink>
             <NavLink
               to="#"
-              className="relative m-0 inline-block text-black NavBarLink after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[3px] after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full"
+              className="relative m-0 inline-block text-white NavBarLink after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[3px] after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full"
             >
               {t.plans}
             </NavLink>

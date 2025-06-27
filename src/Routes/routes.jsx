@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Header from "../components/header/header";
 import AboutUs from "../components/about-us/about-us";
 import ContactUs from "../components/contact/contuct-us";
@@ -21,19 +21,35 @@ function Routes() {
     });
   }, []);
 
+  const scrollToRequest = useRef(null);
+  const [scrollEnabled, setScrollEnabled] = useState(false);
+
+  const handleScroll = () => {
+    setTimeout(() => {
+      scrollToRequest.current?.scrollIntoView({ behavior: "smooth" });
+    }, 20); // scroll ochilganidan keyin pastga tushiramiz
+    setScrollEnabled(true); // scrollni faollashtiramiz
+  };
+
   return (
     <>
-        <LanguageProvider>
+      <LanguageProvider>
+        <div
+          className={`w-full ${
+            scrollEnabled ? "overflow-auto" : "h-screen overflow-hidden"
+          } scroll-smooth`}
+        >
           <Header />
           <main>
-            <AboutUs />
+            <AboutUs onScroll={handleScroll} />
+            <ContactUs ref={scrollToRequest} />
             <Guarantees />
             <Gallery />
             <Plans />
-            <ContactUs />
           </main>
           <Footer />
-        </LanguageProvider>
+        </div>
+      </LanguageProvider>
     </>
   );
 }

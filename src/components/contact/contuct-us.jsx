@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ContactUs = () => {
+const ContactUs =  React.forwardRef((props, ref) => {
 
 
 
@@ -23,7 +23,7 @@ const handleChange = (e) => {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5000/api/send-form", {
+      const res = await fetch("http://127.0.0.1:5000/api/send-form", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -58,7 +58,7 @@ const handleChange = (e) => {
 
 
   return (
-    <section className="bg-white py-16 px-4">
+    <section className="bg-white py-16 px-4" ref={ref}  >
       <div className="max-w-2xl mx-auto">
         <h2 className="text-3xl font-bold text-blue-700 mb-6 text-center">Biz bilan bog‘laning</h2>
 
@@ -127,7 +127,7 @@ const handleChange = (e) => {
       </div>
     </section>
   );
-};
+});
 
 export default ContactUs;
 
