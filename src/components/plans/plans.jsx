@@ -26,15 +26,15 @@ const pricingData = [
     ],
   },
   {
-    title: "Neo Classic",
-    price: "220$/m²",
+    title: "Vip",
+    price: "350$/m²",
     features: [
-      "Bepul konsultatsya",
-      "Bepul  o'lchovlar va 3d loyiha",
-      "chet el mahsulotlari 50% / 50%",
-      "Tolov bosqichma bosqich",
-      "Shartnoma asosida",
-      "1.5 yil kafolat",
+ "Bepul konsultatsya",
+ "Bepul  o'lchovlar va 3d loyiha",
+ "chet el mahsuloti 100%",
+ "Tolov bosqichma bosqich",
+ "Shartnoma asosida",
+ "1.5 yil kafolat",
     ],
   },
 ];
