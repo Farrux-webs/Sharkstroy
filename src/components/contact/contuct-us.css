@@ -1,0 +1,22 @@
+:root {
+    --contact-us: url("../../assets/images/contuct-us.png")
+        /* --about-us-bg: url("../../assets/images/bg.jpg") */
+}
+
+
+.contuct-us {
+    position: relative;
+    z-index: 0;
+}
+
+.contuct-us::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: var(--contact-us);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(10px);
+}

@@ -28,27 +28,20 @@ function Routes() {
     setTimeout(() => {
       scrollToRequest.current?.scrollIntoView({ behavior: "smooth" });
     }, 20); // scroll ochilganidan keyin pastga tushiramiz
-    setScrollEnabled(true); // scrollni faollashtiramiz
   };
 
   return (
     <>
       <LanguageProvider>
-        <div
-          className={`w-full ${
-            scrollEnabled ? "overflow-auto" : "h-screen overflow-hidden"
-          } scroll-smooth`}
-        >
           <Header />
           <main>
             <AboutUs onScroll={handleScroll} />
             <ContactUs ref={scrollToRequest} />
-            <Guarantees />
             <Gallery />
+            <Guarantees />
             <Plans />
           </main>
           <Footer />
-        </div>
       </LanguageProvider>
     </>
   );

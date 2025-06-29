@@ -1,40 +1,119 @@
-import React from 'react';
-import galleryPhoto1 from '../../assets/images/IMG_8295.JPG'
-import galleryPhoto2 from '../../assets/images/IMG_7925.JPG'
-import galleryPhoto3 from '../../assets/images/IMG_8286.JPG'
-import galleryPhoto4 from '../../assets/images/IMG_8292.JPG'
-import galleryPhoto5 from '../../assets/images/IMG_8288.JPG'
-import galleryPhoto6 from '../../assets/images/IMG_8290.JPG'
+import React from "react";
+import galleryPhoto1 from "../../assets/images/IMG_8295.JPG";
+import galleryPhoto2 from "../../assets/images/IMG_7925.JPG";
+import galleryPhoto3 from "../../assets/images/IMG_8286.JPG";
+import galleryPhoto4 from "../../assets/images/IMG_8292.JPG";
+import galleryPhoto5 from "../../assets/images/IMG_8288.JPG";
+import galleryPhoto6 from "../../assets/images/IMG_8290.JPG";
 
 const Galleries = [
-    galleryPhoto1,
-    galleryPhoto2,
-    galleryPhoto3,
-    galleryPhoto4,
-    galleryPhoto5,
-    galleryPhoto6
+  galleryPhoto1,
+  galleryPhoto2,
+  galleryPhoto3,
+  galleryPhoto4,
+  galleryPhoto5,
+  galleryPhoto6,
 ];
 
 const Gallery = () => {
   return (
     <section className="bg-white py-16 px-4">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-blue-800 mb-8">
-          Bizning ishlarimiz
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 cursor-pointer">
-          {Galleries.map((src, index) => (
-            <div key={index}  data-aos="fade-up"
-              data-aos-delay={index * 300} className="overflow-hidden rounded-lg shadow-lg">
-              <img
-                src={src}
-                alt={`Image ${index + 1}`}
-                className="w-full h-60 object-cover transform hover:scale-105 transition duration-300"
-              />
-            </div>
-          ))}
+      <div id="gallery" class="relative w-full" data-carousel="slide">
+        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+              src={galleryPhoto1}
+              class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt=""
+            />
+          </div>
+          <div
+            class="hidden duration-700 ease-in-out"
+            data-carousel-item="active"
+          >
+            <img
+              src={galleryPhoto2}
+              class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt=""
+            />
+          </div>
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+              src={galleryPhoto3}
+              class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt=""
+            />
+          </div>
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+              src={galleryPhoto4}
+              class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt=""
+            />
+          </div>
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+              src={galleryPhoto5}
+              class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt=""
+            />
+          </div>
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+              src={galleryPhoto6}
+              class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt=""
+            />
+          </div>
         </div>
+        <button
+          type="button"
+          class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          data-carousel-prev
+        >
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg
+              class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 1 1 5l4 4"
+              />
+            </svg>
+            <span class="sr-only">Previous</span>
+          </span>
+        </button>
+        <button
+          type="button"
+          class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          data-carousel-next
+        >
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg
+              class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 9 4-4-4-4"
+              />
+            </svg>
+            <span class="sr-only">Next</span>
+          </span>
+        </button>
       </div>
     </section>
   );
