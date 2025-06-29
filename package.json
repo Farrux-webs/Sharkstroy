@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postinstall": "flowbite-react patch"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -18,6 +19,7 @@
     "@tailwindcss/vite": "^4.1.8",
     "aos": "^2.3.4",
     "axios": "^1.10.0",
+    "flowbite-react": "^0.11.8",
     "framer-motion": "^12.17.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
