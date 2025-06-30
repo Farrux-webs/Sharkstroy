@@ -1,5 +1,4 @@
 import React from "react";
-import { Carousel } from "flowbite-react";
 import galleryPhoto1 from "../../assets/images/IMG_8295.JPG";
 import galleryPhoto2 from "../../assets/images/IMG_7925.JPG";
 import galleryPhoto3 from "../../assets/images/IMG_8286.JPG";

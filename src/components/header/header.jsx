@@ -1,19 +1,27 @@
 import React, { useState, useEffect } from "react";
+import useScrollLock from "../../hooks/useScrollLock"
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/icons/LogoShark.png";
 import "./header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faBars } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useLanguage } from "../../context/languagecontext";
 import { texts } from "../../context/texts";
 import LanguageSwitcher from "../../lang/Languageswitcher";
 
 const Header = () => {
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+
+
+
+
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setMobileMenuOpen(!isMobileMenuOpen);
+    setIsMobileMenuOpen((prev) => !prev);
   };
+
+useScrollLock(isMobileMenuOpen)
 
   const { language } = useLanguage();
   const t = texts[language];
@@ -24,14 +32,13 @@ const Header = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <NavLink>
-          <img
-            src={Logo}
-            width="70"
-            height="70"
-            alt=""
-            className="w-32 h-auto LOGO order-2 lg:order-1 cursor-pointer"
-          />
-
+            <img
+              src={Logo}
+              width="70"
+              height="70"
+              alt=""
+              className=" w-20 xl:w-32  h-auto LOGO order-2 lg:order-1 cursor-pointer"
+            />
           </NavLink>
 
           {/* Desktop Menu */}
@@ -77,45 +84,57 @@ const Header = () => {
           </button>
 
           {/* Mobil menyu tugmasi */}
-          <div className="order-1 lg:hidden z-50">
+          <button
+            onClick={toggleMenu}
+            className="order-1 cursor-pointer lg:hidden w-12 h-12 flex items-center justify-center rounded-full bg-blue-800 text-white shadow-md active:bg-white active:ring-2 active:ring-blue-800 active:text-blue-800 transition-all duration-300"
+          >
             <FontAwesomeIcon
-              icon={faBars}
-              className="text-2xl"
-              onClick={() => toggleMenu(false)}
+              icon={isMobileMenuOpen ? faXmark : faBars}
+              className={`text-xl transition-transform duration-300 z-60 ${
+                isMobileMenuOpen ? "rotate-90 scale-150" : ""
+              }`}
             />
-          </div>
+          </button>
         </div>
       </div>
 
       {/* Mobil Menyu */}
-      {isMobileMenuOpen && (
-        <div className="lg:hidden w-[] fixed inset-0 z-50 bg-sky-700 flex flex-col justify-center items-center space-y-6">
+      <div
+        className={`lg:hidden fixed top-0 left-0 w-full h-screen  bg-sky-800/95 backdrop-blur-md transition-transform duration-300 ${
+          isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <div className="flex flex-col justify-center items-center h-full space-y-8 px-6">
           <NavLink
             to="#"
-            className="relative mb-20 inline-block text-white NavBarLink"
+            className="text-white text-xl font-semibold active:text-blue-300 transition"
+            onClick={toggleMenu}
           >
             {t.about}
           </NavLink>
           <NavLink
             to="#"
-            className="relative mb-20 inline-block text-white NavBarLink"
+            className="text-white text-xl font-semibold active:text-blue-300 transition"
+            onClick={toggleMenu}
           >
             {t.services}
           </NavLink>
           <NavLink
             to="#"
-            className="relative mb-20 inline-block text-white NavBarLink"
+            className="text-white text-xl font-semibold active:text-blue-300 transition"
+            onClick={toggleMenu}
           >
             {t.contact}
           </NavLink>
           <NavLink
             to="#"
-            className="relative mb-20 inline-block text-white NavBarLink"
+            className="text-white text-xl font-semibold active:text-blue-300 transition"
+            onClick={toggleMenu}
           >
             {t.plans}
           </NavLink>
         </div>
-      )}
+      </div>
     </header>
   );
 };

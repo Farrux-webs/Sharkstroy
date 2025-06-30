@@ -1,22 +1,44 @@
 :root {
-    --about-us-bg: url("../../assets/images/about-us.avif")
-        /* --about-us-bg: url("../../assets/images/bg.jpg") */
+  --about-us-bg: url("../../assets/images/about-us.avif");
+  --about-us-mobile-bg: url("../../assets/images/aboutUsMobile.jpg");
+  /* --about-us-bg: url("../../assets/images/bg.jpg") */
 }
-
 
 .about-us::before {
-    content: "";
-    inset: 0;
-    background-image: var(--about-us-bg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: absolute;
-    z-index: 2;
-    filter: blur(2.5px);
+  content: "";
+  inset: 0;
+  background-image: var(--about-us-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 2;
+  filter: blur(2.5px);
+}
+
+@media only screen and (max-width: 1024px) {
+.about-us::before {
+  content: "";
+  inset: 0;
+  background-image: var(--about-us-mobile-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 2;
+  filter: blur(2.5px);
+}
 }
 
 
-.scrollButton{
-    z-index: 30;
+.scrollButton {
+  z-index: 30;
+}
+
+.about-usData {
+        font-family: 'Oswald';
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 26px;
 }

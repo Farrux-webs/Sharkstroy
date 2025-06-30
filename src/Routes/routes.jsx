@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import Lenis from "@studio-freight/lenis";
 import Header from "../components/header/header";
 import AboutUs from "../components/about-us/about-us";
 import ContactUs from "../components/contact/contuct-us";
@@ -22,26 +23,49 @@ function Routes() {
   }, []);
 
   const scrollToRequest = useRef(null);
-  const [scrollEnabled, setScrollEnabled] = useState(false);
+   const lenis = useRef(null)
 
-  const handleScroll = () => {
-    setTimeout(() => {
-      scrollToRequest.current?.scrollIntoView({ behavior: "smooth" });
-    }, 20); // scroll ochilganidan keyin pastga tushiramiz
-  };
+ useEffect(() => {
+    const l = new Lenis({
+      duration: 1.5,
+      smooth: true,
+    })
+
+    const raf = (time) => {
+      l.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+
+    lenis.current = l
+
+    return () => l.destroy()
+  }, [])
+
+
+    const handleScroll = () => {
+    if (scrollToRequest.current && lenis.current) {
+      lenis.current.scrollTo(scrollToRequest.current, {
+        offset: 0,
+        duration: 1.5,
+        easing: (t) => t * (2 - t),
+      })
+    }
+  }
 
   return (
     <>
       <LanguageProvider>
-          <Header />
-          <main>
-            <AboutUs onScroll={handleScroll} />
-            <ContactUs ref={scrollToRequest} />
-            <Gallery />
-            <Guarantees />
-            <Plans />
-          </main>
-          <Footer />
+        <Header />
+        <main>
+          <AboutUs onScroll={handleScroll} />
+          <ContactUs ref={scrollToRequest} />
+          <Gallery />
+          <Guarantees />
+          <Plans />
+        </main>
+        <Footer />
       </LanguageProvider>
     </>
   );
