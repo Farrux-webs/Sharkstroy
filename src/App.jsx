@@ -1,27 +1,31 @@
-import { useState, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import Routes from "./Routes/routes";
 import Lenis from "@studio-freight/lenis";
 
 function App() {
+  const lenisRef = useRef(null);
   useEffect(() => {
-    // Initialize Lenis
-    Lenis.current = new Lenis({
-      duration: 5, // Control the duration of the scroll
-      easing: (t) => 1 - Math.pow(1 - t, 4), // Cubic easing for smooth stop
+    const lenis = new Lenis({
+      duration: 2.5, // uzunroq duration = sekinroq harakat
+      easing: (t) => 1 - Math.pow(1 - t, 5), // kuchli inertia, shift qilib to‘xtaydi
       smooth: true,
-      smoothTouch: true, // Enable smooth scrolling on touch devices
+      smoothTouch: true,
+      gestureOrientation: "vertical", // faqat vertikal scroll
     });
 
+    lenisRef.current = lenis;
+
+    let animationFrame;
     const animate = (time) => {
-      Lenis.current.raf(time);
-      requestAnimationFrame(animate);
+      lenis.raf(time);
+      animationFrame = requestAnimationFrame(animate);
     };
 
     requestAnimationFrame(animate);
 
-    // Cleanup on unmount
     return () => {
-      Lenis.current.destroy();
+      cancelAnimationFrame(animationFrame);
+      lenis.destroy();
     };
   }, []);
 

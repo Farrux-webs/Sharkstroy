@@ -19,10 +19,10 @@ const AboutUs = ({ onScroll }) => {
       
       {/* CHAP BLOK */}
       <div className="flex flex-col gap-4 w-full xl:w-1/3">
-        <div className="bg-neutral-400/70 text-black px-5 py-3 rounded-md flex justify-center items-center text-sm xl:text-xl font-semibold">
-          <span className="text-rose-600 lg:text-teal-400 mx-1">BEPUL</span> 3D DIZAYN
+        <div className="bg-neutral-200/90 text-[#3d3d3d] py-3 rounded-md flex justify-center items-center text-sm xl:text-xl font-semibold">
+          <span className="text-rose-600 lg:text-sky-400 mx-1">BEPUL</span> 3D DIZAYN
         </div>
-        <div className="bg-neutral-400/70 text-black px-5 py-3 rounded-md flex justify-center items-center text-sm xl:text-xl font-semibold">
+        <div className="bg-neutral-200/90 text-[#3d3d3d] px-5 py-3 rounded-md flex justify-center items-center text-sm xl:text-xl font-semibold">
           KAFOLAT 1.5 YIL
         </div>
       </div>
@@ -38,17 +38,17 @@ const AboutUs = ({ onScroll }) => {
 
       {/* O‘NG BLOK */}
       <div className="flex flex-col gap-4 w-full xl:w-1/3">
-        <div className="bg-neutral-400/70 text-black px-5 py-3 rounded-md flex justify-center items-center text-base text-sm xl:text-lg font-semibold text-center">
+        <div className="bg-neutral-200/90 text-[#3d3d3d] px-5 py-3 rounded-md flex justify-center items-center text-base text-sm xl:text-lg font-semibold text-center">
           <p>
             UY O‘LCHOVLARI 
           </p>
         </div>
-        <div className="bg-neutral-400/70 text-rose-600 lg:text-teal-400 px-5 py-3 rounded-md flex justify-center items-center text-base text-sm xl:text-lg font-semibold text-center">
-          <p>
+        <div className="bg-neutral-200/90 text-rose-600 lg:text-sky-400 mx-1  px-5 py-3 rounded-md flex justify-center items-center text-base text-sm xl:text-lg font-semibold text-center">
+          <span >
            3D KO'RINISHIDA REJALASHTIRISH BONUS
-          </p>
+          </span>
         </div>
-        <div className="bg-neutral-400/70 text-black px-5 py-3 rounded-md flex justify-center items-center text-base text-sm xl:text-lg font-semibold text-center">
+        <div className="bg-neutral-200/90 text-[#3d3d3d] px-5 py-3 rounded-md flex justify-center items-center text-base text-sm xl:text-lg font-semibold text-center">
           30 YILLIK TAJRIBALI USTALAR
         </div>
       </div>
