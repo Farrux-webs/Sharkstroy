@@ -81,7 +81,7 @@ const ContactUs = React.forwardRef((props, ref) => {
               onChange={handleChange}
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300"
-              placeholder="Farrux Ravshanbekov"
+              placeholder="Ismingizni kiriting"
             />
           </div>
 
@@ -97,7 +97,7 @@ const ContactUs = React.forwardRef((props, ref) => {
               onChange={handleChange}
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300"
-              placeholder="+998 99 358 07 28"
+              placeholder="Raqamingizni kiriting"
             />
           </div>
 
@@ -113,7 +113,7 @@ const ContactUs = React.forwardRef((props, ref) => {
               onChange={handleChange}
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300"
-              placeholder="Toshkent viloyati, Keles"
+              placeholder="Manzilingizni kiriting"
             />
           </div>
 
@@ -129,7 +129,7 @@ const ContactUs = React.forwardRef((props, ref) => {
               required
               rows="4"
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300"
-              placeholder="Men uy qurilishi bo‘yicha maslahat olmoqchiman"
+              placeholder="Nima maqsadda bizga bog'lanayabsz?"
             ></textarea>
           </div>
 
